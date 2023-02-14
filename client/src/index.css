@@ -1,0 +1,7 @@
+body{
+  background-image: linear-gradient(rgba(44, 44, 44, 0.7), rgba(44, 44, 44, 0.7)), url(./css/img/Fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
