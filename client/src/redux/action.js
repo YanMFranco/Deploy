@@ -9,7 +9,7 @@ export const GET_TODO = "GET_TODO";
 export const getCiudades = (page) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/Paises?page=${page}`)
+      .get(`/Paises?page=${page}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_CIUDADES, payload: data }));
   };
@@ -18,7 +18,7 @@ export const getCiudades = (page) => {
 export const getPor_Nombre = (page, search) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/Paises?page=${page}&nombre=${search}`)
+      .get(`/Paises?page=${page}&nombre=${search}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_PORNOMBRE, payload: data }));
   };
@@ -33,7 +33,7 @@ export const orderFiltros = (page,orderA_Z,orderP,orderC) => {
 
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/filtros?page=${page}${ordenPo}${ordenA}${ordenCo}`)
+      .get(`/filtros?page=${page}${ordenPo}${ordenA}${ordenCo}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: ORDER_FILTROS, payload: data }));
   };
@@ -42,7 +42,7 @@ export const orderFiltros = (page,orderA_Z,orderP,orderC) => {
 export const getCiudadDetalle = (id) => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/Paises/${id}`)
+      .get(`/Paises/${id}`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_CIUDADDETALLE, payload: data }));
   };
@@ -51,7 +51,7 @@ export const getCiudadDetalle = (id) => {
 export const getTodo = () => {
   return function (dispatch) {
     axios
-      .get(`http://localhost:3001/todo`)
+      .get(`/todo`)
       .then((response) => response.data)
       .then((data) => dispatch({ type: GET_TODO, payload: data }));
   };
@@ -59,7 +59,7 @@ export const getTodo = () => {
 
 export const crear_Actividad = ({ input }) => {
   return async function () {
-    const res = await axios.post(`http://localhost:3001/activities`, input)
+    const res = await axios.post(`/activities`, input)
     console.log(res.data);
   }
 }

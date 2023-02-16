@@ -7,6 +7,9 @@ import Inicio from './componentes/Inicio';
 import CountriesDetalle from './componentes/CiudadesDetalle';
 import NavBar from './componentes/NavBar';
 import CrearActividad from './componentes/CrearActividad';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 
 function App() {
